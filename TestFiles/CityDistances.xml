@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<root>
+    <Cities>
+        <City>
+            <latitude>53.231233</latitude>
+            <longitude>50.190187</longitude>
+            <name>Samara</name>
+        </City>
+        <City>
+            <latitude>55.75222</latitude>
+            <longitude>37.61556</longitude>
+            <name>Moscow</name>
+        </City>
+        <City>
+            <latitude>51.50853</latitude>
+            <longitude>-0.12574</longitude>
+            <name>London</name>
+        </City>
+        <City>
+            <latitude>40.71427</latitude>
+            <longitude>-74.00597</longitude>
+            <name>new York</name>
+        </City>
+        <City>
+            <latitude>39.9075</latitude>
+            <longitude>116.39723</longitude>
+            <name>Beijing</name>
+        </City>
+    </Cities>
+    <Distances>
+        <Distance>
+            <distance>1054</distance>
+            <fromCity>Samara</fromCity>
+            <toCity>Moscow</toCity>
+        </Distance>
+        <Distance>
+            <distance>2506</distance>
+            <fromCity>Moscow</fromCity>
+            <toCity>London</toCity>
+        </Distance>
+        <Distance>
+            <distance>8160</distance>
+            <fromCity>London</fromCity>
+            <toCity>Beijing</toCity>
+        </Distance>
+    </Distances>
+</root>

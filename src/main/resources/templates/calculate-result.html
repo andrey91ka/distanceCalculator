@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<header th:insert="components/navbar :: navbar"></header>
+
+<div class="container alert">
+    <h1 class="m-5"> Расстояние от <span th:text="${calculate.cityFrom.name}"></span> до <span th:text="${calculate.cityTo.name}"></span>  <p th:text="${way} + 'км'"> </p></h1>
+
+</div>
+
+
+</body>
+</html>

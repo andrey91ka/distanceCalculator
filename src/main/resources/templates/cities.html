@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Список городов</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<header th:insert="components/navbar :: navbar"></header>
+
+<div class="container pt-5">
+    <div th:switch="${cityList}" >
+        <h2 th:case="null">Городов в базе пока нет</h2>
+        <div th:case="*">
+            <h1 class="text-center m-5">Список городов</h1>
+            <table class="table" >
+                <thread >
+                    <tr>
+                        <th>ID</th>
+                        <th>Город</th>
+                    </tr>
+                </thread>
+                <tbody>
+                <tr th:each="city : ${cityList}">
+                    <td th:text="${city.getID()}"></td>
+                    <td th:text="${city.getName()}"></td>
+
+<!--                    <td><a th:href="@{client-update/{id}(id=${client.id})}" class="btn btn-primary"> Редактировать</a> </td>-->
+<!--                    <td><a th:href="@{client-delete/{id}(id=${client.id})}" class="btn btn-danger ">Удалить</a></td>-->
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+
+</body>

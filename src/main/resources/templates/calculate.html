@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Калькулятор</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<header th:insert="components/navbar :: navbar"></header>
+<div class="container">
+
+    <form action="#" th:action="@{/calculate}"  method="post" class="alert mt-5" th:object="${calculate}">
+        <h1 class="text-center m-5">Калькулятор</h1>
+
+
+        <label >расчитать расстояние от города </label>
+        <select th:field="*{cityFrom}" class="form-control" >
+            <option value="0"></option>
+            <option th:each="city : ${cityList}" th:value="${city.ID}"
+                    th:text="${city.name}" />
+        </select>
+
+        <label > до города </label>
+        <select th:field="*{cityTo}" class="form-control" >
+            <option value="0"></option>
+            <option th:each="city1 : ${cityList}" th:value="${city1.ID}"
+                    th:text="${city1.name}" />
+        </select>
+
+        <div class="form-check form-check-inline mt-3 mb-3" >
+            <input class="form-check-input" type="radio" th:field="*{typeCalc}" th:value="CROWFLIGHT"/>
+                <label class="form-check-label">
+                    CROWFLIGHT
+                </label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" th:field="*{typeCalc}" th:value="DISTANCE_MATRIX"/>
+                <label class="form-check-label">
+                    DISTANCE_MATRIX
+                </label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" th:field="*{typeCalc}" th:value="ALL"/>
+                <label class="form-check-label">
+                    ALL
+                </label>
+        </div>
+
+        <input type="submit" class="btn btn-primary mt-5 " value="Расчитать">
+
+    </form>
+
+
+</div>
+</body>
+</html>
